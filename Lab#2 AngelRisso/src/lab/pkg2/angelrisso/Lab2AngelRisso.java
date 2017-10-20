@@ -84,11 +84,11 @@ public class Lab2AngelRisso {
                             int cuenta = Integer.parseInt(JOptionPane.showInputDialog("ingrese su numero de cuenta"));
                             String carrera = JOptionPane.showInputDialog("Ingrese su carrera");
                             int edad = Integer.parseInt(JOptionPane.showInputDialog("ingrese su edad"));
-                            int dinero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su dinero disponible"));
+                            int dineroa = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su dinero disponible"));
                             String user = JOptionPane.showInputDialog("Ingrese un usuario");
                             String pass = JOptionPane.showInputDialog("ingrese una contraseña simple");
                             int cant_classes = Integer.parseInt(JOptionPane.showInputDialog("ingrese la cantidad de clases que va a llevar"));
-                            alumnos.add(new Estudiante(nom_est, cuenta, carrera, edad, dinero, user, pass, cant_classes));
+                            alumnos.add(new Estudiante(nom_est, cuenta, carrera, edad, dineroa, user, pass, cant_classes));
                             System.out.println(alumnos);
                             break;
                         case 2:
@@ -115,8 +115,38 @@ public class Lab2AngelRisso {
                                 classes += clase.get(i);
                             }
 
-                            JOptionPane.showInputDialog(classes + "\n" + " ingrese la clase que va a matricular");
+                            String clas_val = JOptionPane.showInputDialog(classes + "\n" + " ingrese la clase que va a matricular");
+                            val = 0;
+                            for (int i = 0; i < clase.size(); i++) {
+                                if (clase.get(i).getNombre().equals(clas_val)) {
+                                    val = 1;
+                                }
+                            }
+                            if (val == 0) {
+                                while (val == 0) {
+                                    clas_val = JOptionPane.showInputDialog("clase invalida, intente de nuevo");
+                                    for (int i = 0; i < clase.size(); i++) {
+                                        if (clase.get(i).getNombre().equals(clas_val)) {
+                                            val = 1;
+                                        }
+                                    }
+                                }
 
+                            }
+                            val = 0;
+                            int diner,
+                             din_disp;
+                            for (int i = 0; i < alumnos.size(); i++) {
+                                for (int j = 0; j < clase.size(); j++) {
+                                    if (alumnos.get(i).getDinero_disp() < clase.get(j).getPrecio()) {
+                                        val=1;
+                                    }
+                                }
+
+                            }
+                            if (val==1) {
+                                JOptionPane.showMessageDialog(null,"No dispone del dinero para matricular esta clase");
+                            }
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, "regresando al sistema.");
