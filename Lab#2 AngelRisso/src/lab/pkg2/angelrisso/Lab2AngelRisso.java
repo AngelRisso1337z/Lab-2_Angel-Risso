@@ -39,7 +39,11 @@ public class Lab2AngelRisso {
                         case 2:
                             String clas_nom=JOptionPane.showInputDialog("Ingrese el nombre de la clase");
                             int sec=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la seccion de la clase"));
-                            int ma
+                            int max_est=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos estudiantes pueden estar en la seccion"));
+                            String profe=JOptionPane.showInputDialog("ingrese profesor que va a dar la clase");
+                            //validar profes
+                            int unid_val=Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantas unidades valorativas va a tener la clase"));
+                            int precio=Integer.parseInt(JOptionPane.showInputDialog("ingrese cuanto vale la clase"));
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, "Gracias por visitar la Administracion");

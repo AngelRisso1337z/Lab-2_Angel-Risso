@@ -1,24 +1,27 @@
 package lab.pkg2.angelrisso;
+
 import java.util.ArrayList;
+
 public class Clase {
+
     private String nombre;
     private int seccion;
     private int max_est;
     private String maestro;
     private int unid_val;
     private int precio;
-    private ArrayList estudiantes;
 
     public Clase() {
     }
 
-    public Clase(String nombre, int seccion, int max_est, String maestro, int unid_val, ArrayList estudiantes) {
+    public Clase(String nombre, int seccion, int max_est, String maestro, int unid_val, int precio) {
         this.nombre = nombre;
         this.seccion = seccion;
         this.max_est = max_est;
         this.maestro = maestro;
         this.unid_val = unid_val;
-        this.estudiantes = estudiantes;
+        this.precio = precio;
+
     }
 
     public String getNombre() {
@@ -61,12 +64,12 @@ public class Clase {
         this.unid_val = unid_val;
     }
 
-    public ArrayList getEstidiantes() {
-        return estudiantes;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setEstidiantes(ArrayList estudiantes) {
-        this.estudiantes = estudiantes;
+    public void setPrecio(int precio) {
+        this.precio = precio;
     }
-    
+
 }
