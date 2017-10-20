@@ -134,18 +134,18 @@ public class Lab2AngelRisso {
 
                             }
                             val = 0;
-                            int diner,
-                             din_disp;
+
                             for (int i = 0; i < alumnos.size(); i++) {
                                 for (int j = 0; j < clase.size(); j++) {
                                     if (alumnos.get(i).getDinero_disp() < clase.get(j).getPrecio()) {
-                                        val=1;
+                                        val = 1;
                                     }
                                 }
 
                             }
-                            if (val==1) {
-                                JOptionPane.showMessageDialog(null,"No dispone del dinero para matricular esta clase");
+                            if (val == 1) {
+                                JOptionPane.showMessageDialog(null, "No dispone del dinero para matricular esta clase");
+                                break;
                             }
                             break;
                         default:
@@ -154,7 +154,57 @@ public class Lab2AngelRisso {
 
                     break;
                 case 3:
-                    String user = JOptionPane.showInputDialog("Ingrese su Usuario");
+                    int log = Integer.parseInt(JOptionPane.showInputDialog("1.maestro\n"
+                            + "2.alumno"));
+                    switch (log) {
+                        case 1:
+                            int ban = 0,
+                             ban2 = 0;
+                            String user = JOptionPane.showInputDialog("Ingrese su Usuario");
+                            for (int i = 0; i < maestros.size(); i++) {
+                                if (maestros.get(i).getUser().equals(user)) {
+                                    ban = 1;
+                                }
+                            }
+                            if (ban == 0) {
+                                while (ban == 0) {
+                                    for (int i = 0; i < maestros.size(); i++) {
+                                        user = JOptionPane.showInputDialog("Usuario incorrecto, ingrese de nuevo");
+                                        if (maestros.get(i).getUser().equals(user)) {
+                                            ban = 1;
+                                        }
+                                    }
+                                }
+                            }
+                            String pass_m = JOptionPane.showInputDialog("Ingrese su contraseña");
+                            for (int i = 0; i < maestros.size(); i++) {
+                                if (maestros.get(i).getUser().equals(user)) {
+                                    ban2 = 1;
+                                }
+                            }
+                            if (ban2 == 0) {
+                                while (ban2 == 0) {
+                                    for (int i = 0; i < maestros.size(); i++) {
+                                        pass_m = JOptionPane.showInputDialog("contraseña incorrecto, ingrese de nuevo");
+                                        if (maestros.get(i).getPass().equals(pass_m)) {
+                                            ban2 = 1;
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 2:
+                            String user_al = JOptionPane.showInputDialog("Ingrese su Usuario");
+                            for (int i = 0; i < alumnos.size(); i++) {
+
+                            }
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "opcion no valida, regresando al menu");
+                            break;
+                    }
+                    ;
+
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "gracias por usar nuestro sistema");
