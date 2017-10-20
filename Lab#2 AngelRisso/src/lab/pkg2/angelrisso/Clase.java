@@ -6,6 +6,7 @@ public class Clase {
     private int max_est;
     private String maestro;
     private int unid_val;
+    private int precio;
     private ArrayList estudiantes;
 
     public Clase() {

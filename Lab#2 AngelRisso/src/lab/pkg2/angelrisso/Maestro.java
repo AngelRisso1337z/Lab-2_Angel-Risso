@@ -98,7 +98,7 @@ public class Maestro {
 
     @Override
     public String toString() {
-        return "Maestro= " + nombre + " Usuario= " + user + " password= " + pass + " Salario= " + salario;
+        return "Maestro:" + nombre + " Usuario:" + user + " Password: " + pass + " Salario: " + salario;
     }
 
 }
