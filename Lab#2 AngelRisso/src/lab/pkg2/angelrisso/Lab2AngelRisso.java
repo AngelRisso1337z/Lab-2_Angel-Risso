@@ -40,15 +40,32 @@ public class Lab2AngelRisso {
 
                             break;
                         case 2:
+                            int exist=0;
                             int num_class = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de clases que va a meter: "));
                             for (int i = 0; i < num_class; i++) {
                                 String clas_nom = JOptionPane.showInputDialog("Ingrese el nombre de la clase");
                                 int sec = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la seccion de la clase"));
                                 int max_est = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos estudiantes pueden estar en la seccion"));
                                 String profe = JOptionPane.showInputDialog("ingrese profesor que va a dar la clase");
-                                //validar profes
+                                for (int j = 0; j < maestros.size(); j++) {
+                                    if (maestros.get(j).getNombre().equals(profe)) {
+                                        exist=1;
+                                    }
+                                }
+                                if (exist!=1) {
+                                    while (exist!=1) {
+                                        profe=JOptionPane.showInputDialog("su profesor no existe, ingrese otro que si exista");
+                                        for (int j = 0; j < maestros.size(); j++) {
+                                            if (maestros.get(j).getNombre().equals(profe)) {
+                                        exist=1;
+                                    }
+                                        }
+                                    }
+                                }
                                 int unid_val = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantas unidades valorativas va a tener la clase"));
                                 int precio = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuanto vale la clase"));
+                                clase.add(new Clase(clas_nom, sec, max_est, profe, unid_val, precio));
+                                System.out.println(clase);
                             }
                             break;
                         default:
@@ -58,6 +75,8 @@ public class Lab2AngelRisso {
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Bienvenido a la matricula");
+                    String nom_est=JOptionPane.showInputDialog("ingrese su nombre:");
+                    String 
                     break;
                 case 3:
                     String user = JOptionPane.showInputDialog("Ingrese su Usuario");

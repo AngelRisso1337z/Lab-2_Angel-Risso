@@ -72,4 +72,9 @@ public class Clase {
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return "Clase{" + "nombre=" + nombre + ", seccion=" + seccion + ", max_est=" + max_est + ", maestro=" + maestro + ", unid_val=" + unid_val + ", precio=" + precio + '}';
+    }
+
 }
