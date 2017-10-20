@@ -178,7 +178,7 @@ public class Lab2AngelRisso {
                             }
                             String pass_m = JOptionPane.showInputDialog("Ingrese su contraseña");
                             for (int i = 0; i < maestros.size(); i++) {
-                                if (maestros.get(i).getUser().equals(user)) {
+                                if (maestros.get(i).getPass().equals(pass_m)) {
                                     ban2 = 1;
                                 }
                             }
@@ -194,9 +194,38 @@ public class Lab2AngelRisso {
                             }
                             break;
                         case 2:
+                            int ban_a=0,ban2_a=0;
                             String user_al = JOptionPane.showInputDialog("Ingrese su Usuario");
                             for (int i = 0; i < alumnos.size(); i++) {
-
+                                if (alumnos.get(i).getUsuario().equals(user_al)) {
+                                    ban = 1;
+                                }
+                            }
+                            if (ban_a == 0) {
+                                while (ban_a == 0) {
+                                    for (int i = 0; i < maestros.size(); i++) {
+                                        user_al=JOptionPane.showInputDialog("Usuario incorrecto, ingrese de nuevo");
+                                        if (alumnos.get(i).getUsuario().equals(user_al)) {
+                                            ban_a=1;
+                                        }
+                                    }
+                                }
+                            }
+                            String pass_al=JOptionPane.showInputDialog("ingrese su contraseña");
+                            for (int i = 0; i < alumnos.size(); i++) {
+                                if (alumnos.get(i).getPass().equals(pass_al)) {
+                                    ban2_a = 1;
+                                }
+                            }
+                            if (ban2_a == 0) {
+                                while (ban2_a == 0) {
+                                    for (int i = 0; i < maestros.size(); i++) {
+                                        user=JOptionPane.showInputDialog("contraseña incorrecta, ingrese de nuevo");
+                                        if (maestros.get(i).getUser().equals(user)) {
+                                            ban2_a=1;
+                                        }
+                                    }
+                                }
                             }
                             break;
                         default:
