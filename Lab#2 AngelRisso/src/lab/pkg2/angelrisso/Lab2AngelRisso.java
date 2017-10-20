@@ -92,6 +92,30 @@ public class Lab2AngelRisso {
                             System.out.println(alumnos);
                             break;
                         case 2:
+                            int val = 0;
+                            String nom_val = JOptionPane.showInputDialog("Alumno, ingrese su nombre");
+                            for (int i = 0; i < alumnos.size(); i++) {
+                                if (alumnos.get(i).getNombre().equals(nom_val)) {
+                                    val = 1;
+                                }
+                            }
+                            if (val == 0) {
+                                while (val == 0) {
+                                    nom_val = JOptionPane.showInputDialog("usuario invalido, intente de nuevo");
+                                    for (int i = 0; i < alumnos.size(); i++) {
+                                        if (alumnos.get(i).getNombre().equals(nom_val)) {
+                                            val = 1;
+                                        }
+                                    }
+                                }
+
+                            }
+                            String classes = "";
+                            for (int i = 0; i < clase.size(); i++) {
+                                classes += clase.get(i);
+                            }
+
+                            JOptionPane.showInputDialog(classes + "\n" + " ingrese la clase que va a matricular");
 
                             break;
                         default:
