@@ -5,11 +5,14 @@
  */
 package lab.pkg2.angelrisso;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author W7Pro64
  */
 public class Estudiante {
+
     private String nombre;
     private int cuenta;
     private String carrera;
@@ -18,11 +21,12 @@ public class Estudiante {
     private String usuario;
     private String pass;
     private int cant_clases;
+    private ArrayList<String> clases;
 
     public Estudiante() {
     }
 
-    public Estudiante(String nombre, int cuenta, String carrera, int edad, int dinero_disp, String usuario, String pass, int cant_clases) {
+    public Estudiante(String nombre, int cuenta, String carrera, int edad, int dinero_disp, String usuario, String pass, int cant_clases, ArrayList clases) {
         this.nombre = nombre;
         this.cuenta = cuenta;
         this.carrera = carrera;
@@ -31,6 +35,7 @@ public class Estudiante {
         this.usuario = usuario;
         this.pass = pass;
         this.cant_clases = cant_clases;
+        this.clases = clases;
     }
 
     public String getNombre() {
@@ -97,9 +102,17 @@ public class Estudiante {
         this.cant_clases = cant_clases;
     }
 
+    public ArrayList getClases() {
+        return clases;
+    }
+
+    public void setClases(ArrayList clases) {
+        this.clases = clases;
+    }
+
     @Override
     public String toString() {
         return "Estudiante{" + "nombre=" + nombre + ", cuenta=" + cuenta + ", carrera=" + carrera + ", edad=" + edad + ", dinero_disp=" + dinero_disp + ", usuario=" + usuario + ", pass=" + pass + ", cant_clases=" + cant_clases + '}';
     }
-   
+
 }

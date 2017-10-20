@@ -5,13 +5,15 @@
  */
 package lab.pkg2.angelrisso;
 
+import java.util.ArrayList;
+
 public class Maestro {
 
     private String nombre;
     private String titulo;
     private String maestria;
     private int salario;
-
+    private ArrayList clases;
     private String user;
     private String pass;
     private int clases_max;
@@ -20,7 +22,7 @@ public class Maestro {
     public Maestro() {
     }
 
-    public Maestro(String nombre, String titulo, String maestria, int salario, String user, String pass, int clases_max, int seccion) {
+    public Maestro(String nombre, String titulo, String maestria, int salario, String user, String pass, int clases_max, int seccion, ArrayList clases) {
         this.nombre = nombre;
         this.titulo = titulo;
         this.maestria = maestria;
@@ -34,6 +36,14 @@ public class Maestro {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public ArrayList getClases() {
+        return clases;
+    }
+
+    public void setClases(ArrayList clases) {
+        this.clases = clases;
     }
 
     public void setNombre(String nombre) {
