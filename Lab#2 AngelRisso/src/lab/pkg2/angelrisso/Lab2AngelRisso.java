@@ -192,6 +192,7 @@ public class Lab2AngelRisso {
                                     }
                                 }
                             }
+                            int menu_m=Integer.parseInt(JOptionPane.showInputDialog("1."));
                             break;
                         case 2:
                             int ban_a=0,ban2_a=0;
@@ -227,6 +228,7 @@ public class Lab2AngelRisso {
                                     }
                                 }
                             }
+                            JOptionPane.showInputDialog("");
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, "opcion no valida, regresando al menu");
