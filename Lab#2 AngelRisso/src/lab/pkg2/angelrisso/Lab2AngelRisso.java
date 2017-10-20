@@ -24,26 +24,32 @@ public class Lab2AngelRisso {
                             + "3.salir de Admon."));
                     switch (opc) {
                         case 1:
-                            String maestro = JOptionPane.showInputDialog("Ingrese el nombre del maestro");
-                            String maestria = JOptionPane.showInputDialog("Ingrese la maestria de dicho maestro");
-                            String titulo = JOptionPane.showInputDialog("Ingrese maestria, si la tiene");
-                            int salario = Integer.parseInt(JOptionPane.showInputDialog("ingrese salario del maestro"));
+                            int num_maest = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantos maestros va a meter al Sistema"));
+                            for (int i = 0; i < num_maest; i++) {
+                                String maestro = JOptionPane.showInputDialog("Ingrese el nombre del maestro");
+                                String maestria = JOptionPane.showInputDialog("Ingrese la maestria de dicho maestro");
+                                String titulo = JOptionPane.showInputDialog("Ingrese maestria, si la tiene");
+                                int salario = Integer.parseInt(JOptionPane.showInputDialog("ingrese salario del maestro"));
+                                String usuario = JOptionPane.showInputDialog("Ingrese un usuario particular del maestro");
+                                String pass = JOptionPane.showInputDialog("Ingrese la contraseña del maestro");
+                                int clases_max = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantas clases va a dar el maestro"));
+                                int seccion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la seccion del maestro"));
+                                maestros.add(new Maestro(maestro, titulo, maestria, salario, usuario, pass, clases_max, seccion));
+                                System.out.print(maestros);
+                            }
 
-                            String usuario = JOptionPane.showInputDialog("Ingrese un usuario particular del maestro");
-                            String pass = JOptionPane.showInputDialog("Ingrese la contraseña del maestro");
-                            int clases_max = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantas clases va a dar el maestro"));
-                            int seccion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la seccion del maestro"));
-                            maestros.add(new Maestro(maestro, titulo, maestria, salario, usuario, pass, clases_max, seccion));
-                            System.out.print(maestros);
                             break;
                         case 2:
-                            String clas_nom=JOptionPane.showInputDialog("Ingrese el nombre de la clase");
-                            int sec=Integer.parseInt(JOptionPane.showInputDialog("Ingrese la seccion de la clase"));
-                            int max_est=Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos estudiantes pueden estar en la seccion"));
-                            String profe=JOptionPane.showInputDialog("ingrese profesor que va a dar la clase");
-                            //validar profes
-                            int unid_val=Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantas unidades valorativas va a tener la clase"));
-                            int precio=Integer.parseInt(JOptionPane.showInputDialog("ingrese cuanto vale la clase"));
+                            int num_class = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de clases que va a meter: "));
+                            for (int i = 0; i < num_class; i++) {
+                                String clas_nom = JOptionPane.showInputDialog("Ingrese el nombre de la clase");
+                                int sec = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la seccion de la clase"));
+                                int max_est = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cuantos estudiantes pueden estar en la seccion"));
+                                String profe = JOptionPane.showInputDialog("ingrese profesor que va a dar la clase");
+                                //validar profes
+                                int unid_val = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuantas unidades valorativas va a tener la clase"));
+                                int precio = Integer.parseInt(JOptionPane.showInputDialog("ingrese cuanto vale la clase"));
+                            }
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, "Gracias por visitar la Administracion");
