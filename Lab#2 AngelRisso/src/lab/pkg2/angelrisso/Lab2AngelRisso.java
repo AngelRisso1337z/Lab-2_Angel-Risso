@@ -40,7 +40,7 @@ public class Lab2AngelRisso {
 
                             break;
                         case 2:
-                            int exist=0;
+                            int exist = 0;
                             int num_class = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de clases que va a meter: "));
                             for (int i = 0; i < num_class; i++) {
                                 String clas_nom = JOptionPane.showInputDialog("Ingrese el nombre de la clase");
@@ -49,16 +49,16 @@ public class Lab2AngelRisso {
                                 String profe = JOptionPane.showInputDialog("ingrese profesor que va a dar la clase");
                                 for (int j = 0; j < maestros.size(); j++) {
                                     if (maestros.get(j).getNombre().equals(profe)) {
-                                        exist=1;
+                                        exist = 1;
                                     }
                                 }
-                                if (exist!=1) {
-                                    while (exist!=1) {
-                                        profe=JOptionPane.showInputDialog("su profesor no existe, ingrese otro que si exista");
+                                if (exist != 1) {
+                                    while (exist != 1) {
+                                        profe = JOptionPane.showInputDialog("su profesor no existe, ingrese otro que si exista");
                                         for (int j = 0; j < maestros.size(); j++) {
                                             if (maestros.get(j).getNombre().equals(profe)) {
-                                        exist=1;
-                                    }
+                                                exist = 1;
+                                            }
                                         }
                                     }
                                 }
@@ -75,8 +75,29 @@ public class Lab2AngelRisso {
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Bienvenido a la matricula");
-                    String nom_est=JOptionPane.showInputDialog("ingrese su nombre:");
-                    String 
+                    int opcs = Integer.parseInt(JOptionPane.showInputDialog("1.añadir alumno nuevo\n"
+                            + "2.matricular clases\n"
+                            + "3.salir del sistema y regresar al menu"));
+                    switch (opcs) {
+                        case 1:
+                            String nom_est = JOptionPane.showInputDialog("ingrese su nombre:");
+                            int cuenta = Integer.parseInt(JOptionPane.showInputDialog("ingrese su numero de cuenta"));
+                            String carrera = JOptionPane.showInputDialog("Ingrese su carrera");
+                            int edad = Integer.parseInt(JOptionPane.showInputDialog("ingrese su edad"));
+                            int dinero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su dinero disponible"));
+                            String user = JOptionPane.showInputDialog("Ingrese un usuario");
+                            String pass = JOptionPane.showInputDialog("ingrese una contraseña simple");
+                            int cant_classes = Integer.parseInt(JOptionPane.showInputDialog("ingrese la cantidad de clases que va a llevar"));
+                            alumnos.add(new Estudiante(nom_est, cuenta, carrera, edad, dinero, user, pass, cant_classes));
+                            System.out.println(alumnos);
+                            break;
+                        case 2:
+
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "regresando al sistema.");
+                    }
+
                     break;
                 case 3:
                     String user = JOptionPane.showInputDialog("Ingrese su Usuario");
